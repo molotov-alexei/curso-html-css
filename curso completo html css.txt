@@ -1,0 +1,20 @@
+inicio de curso de html y css 
+
+
+-. Estructura de una etiqueta:
+son contenedores que le indican al navegador que se encargado de leer el codigo html cual es la funcion exaacta de es etiqueta, por ejemplo 
+
+h1 , h2, h3, h4,h5, h6 { dentro de estas etiquetas se introduce contenido que quremos que se muestren como titulos y subtitulos, van en orden jerarquico desde la h1 hasta la
+h6, dentro de cada  documento html solo debe existir una etiqueta h1,  esto debido a que dicha etiqueta es usada para escribir el contenido principal del documento, las demas
+etiquetas desde h2 hasta h6 pueden utilizarce cuantas veces sea necesario.},
+
+p{ la etiquet P se utiliza para ingresar contenido de texto o parrafos},
+
+estructura de una etiqueta:
+
+                                 <h1> contenido </h1>    
+
+
+
+
+
