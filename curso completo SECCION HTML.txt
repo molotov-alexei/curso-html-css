@@ -1,0 +1,226 @@
+inicio de curso de html y css 
+
+
+----------------lista de conceptos------------------------
+atributo: son conceptos fundamentales en html. porporcionan informacion adicional sobre el elemento html, permite modificar su apariencia y comportamiento, se incrustan dentro de la etiqueta de apertura
+
+
+
+---------------------------------------------------------------
+
+
+-. Estructura de una etiqueta:
+son contenedores que le indican al navegador que se encargado de leer el codigo html cual es la funcion exacta de es etiqueta, por ejemplo 
+
+h1 , h2, h3, h4,h5, h6 { dentro de estas etiquetas se introduce contenido que queremos que se muestren como titulos y subtitulos, van en orden jerarquico desde la h1 hasta el h6, dentro de cada  documento html solo debe existir una etiqueta h1,  esto debido a que dicha etiqueta es usada para escribir el contenido principal del documento, las demas etiquetas desde h2 hasta h6 pueden utilizarse cuantas veces sea necesario, existe una diferencia visual entre los diferentes "h" la tipografia y la fuente del texto cambian segun la etiqueta que se use, siendo h1 la mayor y h6 la menor en lo que a tamaño se refiere.},
+
+P { la etiqueta P se utiliza para ingresar contenido de texto o parrafos},
+
+estructura de una etiqueta:
+
+                                 <h1> contenido </h1>    
+
+listas {  Tipos Principales de Listas en HTML
+
+1. Listas Desordenadas
+Se usan para agrupar elementos donde el orden no es importante. Por defecto, los elementos se marcan con viñetas (círculos o cuadrados).
+
+Etiqueta Principal: <**ul**>
+
+Etiqueta para los Elementos: <**li**> (List Item)
+
+<ul>
+  <li>Manzanas</li>
+  <li>Plátanos</li>
+  <li>Naranjas</li>
+</ul>
+
+
+2. Listas Ordenadas (Ordered Lists)
+Se usan para agrupar elementos donde el orden sí es importante (secuencias, pasos, rankings). Por defecto, los elementos se marcan con números, pero se pueden cambiar a letras o números romanos usando el atributo type.
+
+Etiqueta Principal: <**ol**> (Ordered List)
+
+Etiqueta para los Elementos: <**li**> (List Item)
+
+Ejemplo de código:
+
+HTML
+
+<ol>
+  <li>Paso uno: Abrir el editor.</li>
+  <li>Paso dos: Escribir el código.</li>
+  <li>Paso tres: Guardar el archivo.</li>
+</ol>
+
+3. Listas de Definición (Description Lists)
+Se usan para marcar una lista de términos y sus correspondientes descripciones o definiciones.
+
+Etiqueta Principal: <**dl**> (Description List)
+
+Etiqueta para el Término: <**dt**> (Definition Term)
+
+Etiqueta para la Descripción: <**dd**> (Description Description)
+
+Ejemplo de código:
+
+HTML
+
+<dl>
+  <dt>HTML</dt>
+  <dd>Lenguaje de marcado de hipertexto.</dd>
+
+  <dt>CSS</dt>
+  <dd>Hojas de estilo en cascada para dar estilo a los documentos.</dd>
+</dl>
+
+Enlaces { En HTML, los enlaces (o hipervínculos) se crean principalmente con la etiqueta <a> (anchor) y son fundamentales para conectar una página web con otra, o diferentes secciones dentro de la misma página.}
+
+TIPOS DE ENLACES EN HTML
+
+1. Enlaces Externos (Absolute URLs)
+Estos enlaces apuntan a una ubicación fuera de tu sitio web o a cualquier lugar de internet. Requieren la dirección URL completa, incluyendo el protocolo (http:// o https://) y el dominio.
+
+2. Enlaces Internos (Relative URLs)
+Estos enlaces apuntan a otra página o recurso dentro de tu mismo sitio web. Solo necesitas especificar la ruta (el path) desde el archivo HTML actual hasta el destino.
+
+3. Enlaces a Secciones Específicas (Fragment Identifiers o Anclas)
+Estos enlaces apuntan a una sección específica dentro de la misma página web o de otra página. Se utilizan identificadores de fragmento (#).
+
+Para que funcionen, debes darle un id al elemento de destino.
+
+Uso: Para crear una "tabla de contenidos" o para llevar al usuario rápidamente a una sección larga de la página (ej. ir al pie de página).
+
+4. Enlaces para Correo Electrónico (mailto:)
+Permite que al hacer clic se abra la aplicación de correo electrónico predeterminada del usuario, con la dirección de destino ya cargada.
+
+Uso: Para facilitar que los usuarios te envíen un correo.
+
+Ejemplo:
+
+HTML
+
+<a href="mailto:tunombre@ejemplo.com">Enviar Correo</a>
+
+5. Enlaces para Llamadas Telefónicas (tel:)
+En dispositivos móviles, al hacer clic, inicia una llamada al número especificado.
+
+Uso: Botones de "Llamar ahora" en sitios web móviles.
+
+Ejemplo:
+
+HTML
+
+<a href="tel:+15551234567">Llámanos</a>
+
+6. Enlaces para Descarga (download Attribute)
+Cuando este atributo está presente, el navegador fuerza la descarga del recurso en lugar de intentar mostrarlo (como una imagen o un PDF).
+
+Uso: Ofrecer archivos (PDF, ZIP, imágenes) para que el usuario los guarde.
+
+Ejemplo:
+
+HTML
+
+<a href="documento.pdf" download="MiDocumento.pdf">Descargar PDF</a>
+
+ATRIBUTOS DE ENLACES 
+
+href	Obligatorio. Especifica la URL o el destino al que apunta el enlace (página web, archivo, sección, correo, etc.).
+
+target	Indica dónde se abrirá el destino del enlace (ej. _blank para abrir en una nueva pestaña).
+
+download	Indica al navegador que debe descargar el recurso enlazado en lugar de navegar a él.
+
+rel	Especifica la relación entre el documento actual y el documento enlazado (importante para SEO y seguridad, ej. nofollow, noopener).
+
+type	Sugiere el tipo MIME del contenido al que se está enlazando (ej. image/png).
+
+title	Proporciona una información adicional que se muestra como un texto emergente (tooltip) al pasar el ratón sobre el enlace.
+
+
+
+IMAGENES 
+
+La etiqueta <img> (de image) se utiliza para insertar una imagen en un documento HTML. Es una etiqueta vacía (no tiene etiqueta de cierre)
+ y requiere al menos un atributo para funcionar correctamente: src.
+
+ATRIBUTOS DE IMAGENES
+
+src	Especifica la ruta o URL de la imagen que se va a mostrar.
+
+alt	Proporciona un texto alternativo para la imagen.
+
+
+FORMULARIOS 
+
+La etiqueta <form> define el formulario en sí y actúa como un contenedor para todos los elementos de control que lo componen.
+
+ATRIBUTOS DE FORM
+
+action:	Ruta/URL del archivo en el servidor que procesará los datos del formulario (ej. un script PHP, Python, etc.).
+
+method:	El método HTTP utilizado para enviar los datos al action.
+
+autocomplete:	Especifica si el formulario debe tener activada la función de autocompletado del navegador.
+
+ELEMENTOS DE CONTROL: 
+<input>
+
+La etiqueta <input> es el elemento de formulario más versátil y utilizado. Es una etiqueta vacía y su comportamiento cambia drásticamente 
+según el valor de su atributo type.
+
+
+type:	Define el tipo de control (texto, contraseña, botón, etc.).
+name:	Nombre del control, esencial para identificar el dato en el servidor.
+value:	Valor inicial del campo o el valor que se enviará al servidor.
+placeholder: Texto de ejemplo que se muestra en el campo antes de que el usuario escriba.
+required: Atributo booleano. Indica que el campo debe ser rellenado antes de enviar el formulario.
+disabled: Atributo booleano. Hace que el campo sea no interactivo y sus datos no se envíen.
+readonly: Atributo booleano. El campo no puede ser modificado por el usuario, pero su valor sí se envía.
+
+
+Tipos de <input> Más Comunes
+type                                          Descripción                                                 Ejemplo de Uso 
+text                                   Campo de texto de una sola línea.                                Nombre, dirección.
+password                               Campo de texto donde los caracteres se ocultan.
+email                                  Campo diseñado para direcciones de correo electrónico.         required y validación de formato.
+submit                                 Botón para enviar los datos del formulario al servidor.          value="Enviar Datos"
+radio                                  Permite seleccionar solo una opción de un conjunto.            Género, nivel de estudios.
+checkbox                               Permite seleccionar cero o más opciones de un conjunto.        Aceptar términos y condiciones.
+file                                   Botón que abre un explorador de archivos para subir un archivo. Subir una foto de perfil.
+date                                   Control para seleccionar una fecha.                               Fecha de nacimiento.
+hidden                                 Campo invisible para el usuario, utilizado para enviar datos que necesita el servidor.Tokens de seguridad.
+
+
+OTRAS ETIQUETAS DE FORMULARIO
+Además de <form> e <input>, hay otras etiquetas importantes:
+
+1. <label>
+Asocia una descripción o título a un control de formulario. Mejora la accesibilidad y permite hacer clic en el texto para activar el campo.
+Atributo clave: for (debe coincidir con el id del campo al que se refiere).
+
+2. <textarea>
+Define un control 
+
+3. <select> y <option>
+Se utiliza para crear una lista desplegable de opciones.
+
+<select>: El contenedor principal. Su atributo name es el que se envía.
+
+<option>: Cada elemento seleccionable en la lista. Su atributo value es el que se envía si se selecciona.de entrada de texto multilínea (grande).
+
+Atributos clave: rows (número de filas visibles) y cols (número de columnas visibles).
+
+4. <button>
+Define un botón. Es más versátil que <input type="submit">.
+
+Atributo clave: type (puede ser submit, reset o button).
+
+
+
+
+
+
+
+
