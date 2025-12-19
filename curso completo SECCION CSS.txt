@@ -1,0 +1,192 @@
+  									CSS
+
+CSS, que significa Cascading Style Sheets (Hojas de Estilo en Cascada), es un lenguaje de diseño que se utiliza para describir la presentación 
+y el estilo de un documento escrito en un lenguaje de marcado, como HTML.
+
+En términos sencillos, si HTML define la estructura y el contenido de una página web
+ (los textos, imágenes, enlaces, encabezados), CSS define cómo se verá esa estructura y contenido.
+
+EL ROL DE CSS EN EL DESARROLLO WEB
+
+CSS es fundamentalmente el "maquillaje" o el "diseño de interiores" de la web. Su función principal es separar el contenido de la presentación.
+
+Sin CSS: Una página web sería solo texto sin formato, como un documento de Word sin estilos.
+
+Con CSS: Puedes controlar:
+
+Colores: Del texto, fondos, bordes, etc.
+
+Tipografía: Fuentes, tamaños y espaciado.
+
+Diseño (Layout): Dónde se ubican los elementos, cómo se organizan en columnas, y cómo se adaptan a diferentes tamaños de pantalla (diseño responsive).
+
+Efectos y Animaciones: Transiciones y pequeños movimientos.
+
+Conceptos Clave de CSS
+
+1.Sintaxis de CSSEl código CSS se compone de reglas que tienen una estructura específica:
+
+
+					SELECTOR { PROPIEDAD: VALOR;}
+
+Selector: Es la parte que "selecciona" o apunta al elemento HTML que deseas estilizar (ej. h1 para los encabezados, .clase para elementos específicos).
+
+Declaración: Es la parte que está dentro de las llaves {}. Contiene:
+
+Propiedad: El aspecto que deseas cambiar (ej. color, font-size, margin).
+
+Valor: La configuración que le das a esa propiedad (ej. blue, 24px, 10px).
+
+
+
+
+2. Cascada (Cascading)
+
+El término "en cascada" se refiere a la forma en que CSS aplica los estilos. Cuando hay múltiples reglas que entran en conflicto 
+(por ejemplo, una regla global dice que el texto es azul y una regla específica dice que es rojo), 
+CSS utiliza un conjunto de reglas de prioridad para determinar qué estilo aplicar:
+
+Especificidad: Las reglas más específicas tienen mayor prioridad.
+
+Herencia: Algunos estilos se heredan de elementos padre a elementos hijo (ej. el color de fuente se puede heredar del cuerpo de la página).
+
+Orden de Origen: La regla que aparece más tarde en la hoja de estilos anula a la que aparece primero.
+
+
+SELECTORES EN CSS
+
+Los Selectores CSS son la columna vertebral de las Hojas de Estilo en Cascada (CSS). Su función principal es seleccionar o apuntar a 
+los elementos HTML a los que deseas aplicar un conjunto de reglas de estilo. Piensa en ellos como la dirección que le das al navegador 
+para que sepa exactamente qué elementos colorear, dimensionar o posicionar.
+
+1. Selectores de Tipo (Etiqueta)
+Seleccionan todos los elementos que coinciden con un nombre de etiqueta HTML específica.
+
+Sintaxis: Se usa directamente el nombre de la etiqueta.
+
+2. Selectores de Clase
+Seleccionan elementos que tienen un atributo class específico. Es el selector más flexible y utilizado, ya que 
+una clase puede aplicarse a múltiples elementos y un elemento puede tener múltiples clases.
+
+Sintaxis: Se antepone un punto (.) al nombre de la clase.
+
+Ejemplo HTML: <p class="destacado">Texto</p>
+
+3. Selectores de ID
+Seleccionan un único elemento que tiene un atributo id específico. El valor del id debe ser único en todo el documento HTML.
+
+Sintaxis: Se antepone una almohadilla o hash (#) al nombre del ID.
+
+Ejemplo HTML: <div id="menu-principal">...</div>
+
+
+4. Selector Universal
+Selecciona todos los elementos del documento HTML.
+
+Sintaxis: Se usa el asterisco (*).
+
+SELECTORES AVANZADOS
+
+1. Selectores Combinadores
+Estos definen la relación entre dos selectores (A y B) y son cruciales para estructurar estilos complejos.
+
+
+Combinador				Símbolo	Nombre					Descripción					
+
+Descendiente				A B (Espacio)					Descendant Selector
+										Selecciona el elemento B que está dentro de A,
+										 sin importar cuán profundo esté anidado.
+
+Hijo Directo				A > B				Child Selector	Selecciona el elemento B que es un hijo inmediato 
+										  (primer nivel de anidación) de A.
+
+
+Hermano Adyacente			A + B				Selecciona el elemento B que sigue inmediatamente a A y
+											 comparte el mismo padre.
+
+
+Hermano General	A ~ B	    General Sibling Selector				Selecciona todos los elementos B que siguen a A y comparten
+										 el mismo padre (no necesariamente de inmediato).
+
+
+
+2. Selectores de Atributo
+Permiten seleccionar elementos basándose en la presencia o el valor de sus atributos HTML (como href, title, target, etc.).
+
+
+
+
+Selector						Significado						Descripción
+
+
+[attr]							Solo presencia			Selecciona el elemento si tiene el atributo especificado.
+
+
+[attr="val"]						  Valor exacto		    Selecciona el elemento si el valor del atributo es exactamente val.
+
+[attr*="val"]						    Contiene	             Selecciona si el valor del atributo contiene val en cualquier parte.
+
+
+
+3. Pseudoclases (:)
+Las pseudoclases seleccionan elementos en función de un estado dinámico o una posición dentro de la estructura, 
+algo que no se puede lograr con selectores de clase o ID simples.
+
+
+Pseudoclase							Descripción						Ejemplo Común
+
+:hover					El elemento cuando el puntero del ratón está sobre él.           a:hover (Cambiar color al pasar el ratón por un enlace).
+
+:active					El elemento mientras está siendo activado (presionado).           button:active (Efecto de "hundimiento" al hacer clic).
+
+:focus					El elemento que actualmente tiene el foco (útil en formularios).	input:focus (Resaltar el campo activo).
+
+:visited					Enlaces que ya han sido visitados por el usuario.	     a:visited (Cambiar color a enlaces visitados).
+
+
+Pseudoclases Estructurales/Posicionales
+
+Estas son extremadamente útiles para dar estilo a elementos específicos en una lista o un grupo de hermanos.
+
+:first-child: Selecciona el elemento si es el primer hijo de su padre.
+
+:last-child: Selecciona el elemento si es el último hijo de su padre.
+
+:nth-child(n): Selecciona el hijo en la posición n (puedes usar números, odd o even).
+
+:only-child: Selecciona el elemento si es el único hijo de su padre.
+
+
+
+4. Pseudoelementos (::)
+Los pseudoelementos permiten seleccionar y aplicar estilo a una parte específica de un elemento, o insertar contenido decorativo que no existe en el HTML.
+
+Pseudoelemento                                              Descripción                                                   Aplicación Común
+
+
+::before	                 Inserta contenido antes del contenido real del elemento.	               Usado para íconos o comillas de apertura.
+														     Requiere la propiedad content.
+
+::after				Inserta contenido después del contenido real del elemento.	     Usado para limpiar flotados o agregar decoraciones de cierre.
+														     Requiere la propiedad content.
+
+::first-letter	  			Selecciona la primera letra de un bloque de texto.	           Crear una letra capital (más grande que el resto).
+
+::selection				   Selecciona el texto resaltado por el usuario.	        Cambiar el color de fondo y texto cuando el usuario
+															 selecciona contenido.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
