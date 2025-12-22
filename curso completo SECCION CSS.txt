@@ -176,10 +176,146 @@ Pseudoelemento                                              Descripción        
 															 selecciona contenido.
 
 
+TIPOGRAFIAS EXTERNAS
 
+Usando la regla @font-face (Fuentes auto-alojadas)
+Este método te permite cargar archivos de fuente directamente desde tu propio servidor (o carpeta del proyecto). Es ideal si buscas más control, 
+privacidad, o si la fuente no está en un servicio externo como Google Fonts.
 
+Sintaxis
+Debes definir la fuente al comienzo de tu archivo CSS:
 
+CSS
 
+@font-face {
+  font-family: 'MiFuentePersonalizada'; /* Nombre que usarás en el CSS */
+  src: url('ruta/a/MiFuente.woff2') format('woff2'),
+       url('ruta/a/MiFuente.woff') format('woff'); /* URL(s) del archivo de fuente */
+  font-weight: normal; /* Opcional: define el grosor */
+  font-style: normal; /* Opcional: define el estilo */
+}
+
+font-family: El nombre que le das a la fuente para usarla después.
+
+src: Especifica la ruta a tu archivo de fuente. Es fundamental incluir múltiples formatos (como woff2 y woff) 
+para asegurar la compatibilidad con diferentes navegadores.
+
+¡
+
+Hay dos métodos principales para incorporar estas fuentes:
+
+1. Usando la regla @font-face (Fuentes auto-alojadas)
+Este método te permite cargar archivos de fuente directamente desde tu propio servidor (o carpeta del proyecto). 
+Es ideal si buscas más control, privacidad, o si la fuente no está en un servicio externo como Google Fonts.
+
+🔧 Sintaxis
+Debes definir la fuente al comienzo de tu archivo CSS:
+
+CSS
+
+@font-face {
+  font-family: 'MiFuentePersonalizada'; /* Nombre que usarás en el CSS */
+  src: url('ruta/a/MiFuente.woff2') format('woff2'),
+       url('ruta/a/MiFuente.woff') format('woff'); /* URL(s) del archivo de fuente */
+  font-weight: normal; /* Opcional: define el grosor */
+  font-style: normal; /* Opcional: define el estilo */
+}
+font-family: El nombre que le das a la fuente para usarla después.
+
+src: Especifica la ruta a tu archivo de fuente. Es fundamental incluir múltiples formatos (como woff2 y woff) para asegurar la compatibilidad con diferentes navegadores.
+
+🚀 Uso posterior
+Una vez definida con @font-face, la aplicas con la propiedad font-family:
+
+CSS
+
+h1 {
+  font-family: 'MiFuentePersonalizada', Arial, sans-serif;
+}
+Nota: La lista de fuentes de reserva (Arial, sans-serif) es importante por si la fuente personalizada no se puede cargar.
+
+2. Usando Servicios de Fuentes Externos (Ej. Google Fonts)
+Este es el método más popular y sencillo. Servicios como Google Fonts alojan las fuentes en sus propios servidores (CDN), 
+lo que a menudo garantiza un mejor rendimiento y una configuración más fácil.
+
+Tienes dos opciones para importarlas desde Google Fonts:
+
+A. Mediante la etiqueta <link> en HTML (Recomendado)
+Agrega un enlace al head de tu documento HTML, antes de tu archivo CSS:
+
+HTML
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+¡Claro! El uso de tipografías externas en CSS es crucial para la identidad visual de un sitio web, ya que te permite utilizar fuentes que no están instaladas por defecto en el dispositivo del usuario.
+
+Hay dos métodos principales para incorporar estas fuentes:
+
+1. Usando la regla @font-face (Fuentes auto-alojadas)
+Este método te permite cargar archivos de fuente directamente desde tu propio servidor (o carpeta del proyecto). Es ideal si buscas más control, privacidad, o si la fuente no está en un servicio externo como Google Fonts.
+
+🔧 Sintaxis
+Debes definir la fuente al comienzo de tu archivo CSS:
+
+CSS
+
+@font-face {
+  font-family: 'MiFuentePersonalizada'; /* Nombre que usarás en el CSS */
+  src: url('ruta/a/MiFuente.woff2') format('woff2'),
+       url('ruta/a/MiFuente.woff') format('woff'); /* URL(s) del archivo de fuente */
+  font-weight: normal; /* Opcional: define el grosor */
+  font-style: normal; /* Opcional: define el estilo */
+}
+font-family: El nombre que le das a la fuente para usarla después.
+
+src: Especifica la ruta a tu archivo de fuente. Es fundamental incluir múltiples formatos (como woff2 y woff) para asegurar la compatibilidad con diferentes navegadores.
+
+🚀 Uso posterior
+Una vez definida con @font-face, la aplicas con la propiedad font-family:
+
+CSS
+
+h1 {
+  font-family: 'MiFuentePersonalizada', Arial, sans-serif;
+}
+Nota: La lista de fuentes de reserva (Arial, sans-serif) es importante por si la fuente personalizada no se puede cargar.
+
+2. Usando Servicios de Fuentes Externos (Ej. Google Fonts)
+Este es el método más popular y sencillo. Servicios como Google Fonts alojan las fuentes en sus propios servidores (CDN), lo que a menudo garantiza un mejor rendimiento y una configuración más fácil.
+
+Tienes dos opciones para importarlas desde Google Fonts:
+
+A. Mediante la etiqueta <link> en HTML (Recomendado)
+Agrega un enlace al head de tu documento HTML, antes de tu archivo CSS:
+
+HTML
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+B. Mediante la regla @import en CSS
+Agrega esta regla al inicio de tu archivo CSS:
+
+CSS
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+Uso posterior
+Una vez importada, la aplicas directamente en tu CSS usando el nombre que indica Google Fonts (en este ejemplo, Roboto):
+
+Formatos de Fuentes Comunes
+
+Para la web, los formatos más recomendados son:
+
+WOFF2 (Web Open Font Format 2): Ofrece la mejor compresión y es el más moderno. Es altamente recomendado.
+
+WOFF (Web Open Font Format): Ampliamente compatible con navegadores antiguos que no soportan WOFF2.
+
+TTF/OTF (TrueType/OpenType): Formatos de escritorio que se usan a veces como respaldo, pero son menos eficientes para la web que WOFF/WOFF2.
+
+Para una buena práctica, siempre es mejor incluir al menos woff2 y woff en tu declaración @font-face si auto-alojas las fuentes.
 
 
 
